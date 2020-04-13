@@ -6,6 +6,10 @@ a {
   color: #28a745;
 }
 
+.btn-secondary {
+  background-color: #6c757d !important;
+}
+
 /* HORIZONTAL RULE STYLES */
 hr.dashed {
     border-top: 2px dashed #999;
@@ -53,6 +57,9 @@ hr.hr-text::before {
 
 .hero-overlay {
   background: #28a745;
+}
+
+.hero-text {
   color: #FFFFFF;
   text-shadow: 2px 2px 2px #000000;
 }
