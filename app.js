@@ -15,7 +15,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 //create connection
 const conn = mysql.createConnection({
-  host: 'localhost',
+  host: '24.125.109.20',
   user: 'hci',
   password: 'hci2020',
   database: 'pocketbudget'
