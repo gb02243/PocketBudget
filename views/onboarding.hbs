@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Onboarding - PocketBudget</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap Core -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Parallax Core CSS -->
+  <link rel="stylesheet" href="assets/css/jarallax.css">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/js/mdb.min.js"></script>
+  <!-- Parallax Scripts -->
+  <script src="assets/js/jarallax.js"></script>
+  <script src="assets/js/jarallax-element.js"></script>
+  <script src="assets/js/jarallax-video.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  {{>navbar}}
+  <!-- END HEADER -->
+  <!-- STEPPER -->
+  <!-- Horizontal Steppers -->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal">
+        <!-- First Step -->
+        <li class="completed">
+          <a href="#!">
+            <span class="circle">1</span>
+            <span class="label">First step</span>
+          </a>
+        </li>
+        <!-- Second Step -->
+        <li class="active">
+          <a href="#!">
+            <span class="circle">2</span>
+            <span class="label">Second step</span>
+          </a>
+        </li>
+        <!-- Third Step -->
+        <li class="warning">
+          <a href="#!">
+            <span class="circle"><i class="fas fa-exclamation"></i></span>
+            <span class="label">Third step</span>
+          </a>
+        </li>
+      </ul>
+      <!-- /.Stepers Wrapper -->
+    </div>
+  </div>
+  <!-- /.Horizontal Steppers -->
+  <!-- END STEPPER -->
+  <!-- FOOTER -->
+  {{>footer}}
+  <!-- END FOOTER -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    $('.stepper').mdbStepper();
+  })
+  </script>
+  <script type="text/javascript">
+  jarallax(document.querySelectorAll('.jarallax'));
+  </script>
+</body>
+</html>

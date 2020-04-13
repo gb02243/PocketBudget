@@ -41,6 +41,11 @@ app.get('/',(req, res) => {
   res.render('homepage');
 });
 
+//route for onboarding
+app.get('/onboarding',(req, res) => {
+  res.render('onboarding');
+});
+
 //server listening
 app.listen(8000, () => {
   console.log('Server is running at port 8000');
