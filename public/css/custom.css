@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  color: #28a745;
+}
+
 /* HORIZONTAL RULE STYLES */
 hr.dashed {
     border-top: 2px dashed #999;
