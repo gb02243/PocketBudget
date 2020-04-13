@@ -44,6 +44,7 @@ hr.hr-text::before {
 
 .jumbotron {
   margin-bottom: 0;
+  padding-top: 3em;
 }
 
 .hero-overlay {
