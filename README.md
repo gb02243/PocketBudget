@@ -1,5 +1,6 @@
 # PocketBudget
 
+### Instructions
 1. clone the repository
 2. navigate to the PocketBudget directory
 3. type 'npm install #' to install the dependencies
