@@ -10,7 +10,58 @@
   <script src="assets/js/jarallax-video.js"></script>
 </head>
 <body>
-  <h1>Test Homepage</h1>
+  {{>navbar}}
+  <!-- HERO -->
+  <section id="hero">
+    <center>
+      <div class="jumbotron jumbotron-fluid h-100 jarallax hero-overlay">
+        <div class="container">
+          <div class="row h-100">
+            <div class="col-sm-12 my-auto">
+              <h1 class="display-2">PocketBudget</h1>
+              <p class="lead">Take control of your wallet.</p>
+              <hr class="solid big_margin">
+              <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+              <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="#loginModal">Log In</button>
+            </div>
+          </div>
+        </div>
+        <img class="jarallax-img opacity-75" src="https://images.unsplash.com/photo-1504983376254-592a0ea9b0cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3291&q=80">
+      </div>
+    </center>
+  </section>
+  <!-- END HERO -->
+  <!-- ABOUT -->
+  <section id="about" class="bg-white">
+    <center>
+      <div class="container">
+        <h1>About Us</h1>
+        <hr class="solid medium_margin">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla velit mi, mattis quis placerat tempor, blandit ut est. Nam dapibus urna eros, sit amet pharetra mauris scelerisque sit amet. Vestibulum hendrerit lectus quis ante ultricies eleifend. Maecenas et nulla augue. Sed dictum, ante sed laoreet condimentum, est magna molestie erat, quis consequat est massa quis erat. Donec elementum, metus nec malesuada auctor, neque orci sodales lectus, quis malesuada lacus augue eget lorem. Cras gravida porta malesuada. Vestibulum ac enim tortor. Sed lacinia dui quis felis ullamcorper blandit. Nulla quis lacus eget felis consequat mattis eget egestas nisl. Aliquam pulvinar ullamcorper nisi et bibendum. Fusce tincidunt scelerisque magna in lobortis.</p>
+        <p>Cras volutpat orci in diam placerat vestibulum. Aenean eu semper turpis. Aenean interdum, orci ac dictum fringilla, sapien quam tincidunt sapien, eget scelerisque turpis mi at dui. Mauris pharetra augue orci, a aliquam lectus commodo non. Nam tincidunt ipsum eu mattis dapibus. Sed malesuada felis nisl, eget ornare nunc posuere id. Vivamus varius sagittis ex tincidunt fringilla. Donec in scelerisque sapien, eu varius orci.</p>
+        <p>Duis at orci ac mauris ornare tristique id in metus. Curabitur eu eleifend erat. Aliquam ultricies faucibus elit quis semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In fermentum rutrum lorem vitae ultrices. Sed dui massa, aliquet ac nibh a, suscipit molestie justo. Nam neque metus, mattis ac urna in, tempor molestie dui.</p>
+      </div>
+    </center>
+  </section>
+  <!-- END ABOUT -->
+  <!-- GALLERY -->
+  <section id="gallery" class="bg-success">
+    <center>
+      <div class="container">
+        <h1>Gallery</h1>
+        <hr class="solid medium_margin">
+        {{>demo_carousel}}
+      </div>
+    </center>
+  </section>
+  <!-- END GALLERY -->
+  <!-- FOOTER -->
+  {{>footer}}
+  <!-- END FOOTER -->
+  <!-- MODALS -->
+  {{>login_modal}}
+  {{>signup_modal}}
+  <!-- END MODALS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

@@ -1,0 +1,97 @@
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create an Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationServer01">First name</label>
+              <input type="text" class="form-control is-invalid" id="validationServer01" placeholder="First"required>
+              <div class="invalid-feedback">
+                Please enter your first name.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationServer02">Last name</label>
+              <input type="text" class="form-control is-invalid" id="validationServer02" placeholder="Last" required>
+              <div class="invalid-feedback">
+                Please enter your last name.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationServerUsername">Email Address</label>
+              <div class="input-group">
+                <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="email@example.com" aria-describedby="inputGroupPrepend3" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationServer03">City</label>
+              <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationServer04">State</label>
+              <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationServer05">Zip</label>
+              <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+              <label class="form-check-label" for="invalidCheck3">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before creating an account.
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Create Account</button>
+      </div>
+    </div>
+  </div>
+</div>

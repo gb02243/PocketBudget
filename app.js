@@ -10,6 +10,9 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
 
+//register partials
+hbs.registerPartials(__dirname + '/views/partials');
+
 //create connection
 const conn = mysql.createConnection({
   host: 'localhost',
