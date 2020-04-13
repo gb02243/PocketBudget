@@ -41,9 +41,19 @@ app.get('/',(req, res) => {
   res.render('homepage');
 });
 
+//route for homepage
+app.get('/homepage',(req, res) => {
+  res.render('homepage');
+});
+
 //route for onboarding
 app.get('/onboarding',(req, res) => {
   res.render('onboarding');
+});
+
+//route for dashboard
+app.get('/dashboard',(req, res) => {
+  res.render('dashboard');
 });
 
 //server listening
