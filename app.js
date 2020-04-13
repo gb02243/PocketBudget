@@ -47,8 +47,8 @@ app.get('/homepage',(req, res) => {
 });
 
 //route for onboarding
-app.get('/onboarding',(req, res) => {
-  res.render('onboarding');
+app.get('/create_budget',(req, res) => {
+  res.render('create_budget');
 });
 
 //route for dashboard

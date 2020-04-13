@@ -17,21 +17,12 @@
       </button>
     </div>
     <!-- END BUDGET BREAKDOWN HEADER -->
-    <div class="line"></div>
-    <!-- CONFIRM BUDGET HEADER -->
-    <div class="step" data-target="#confirm-part">
-      <button type="button" class="step-trigger" role="tab" aria-controls="confirm-part" id="confirm-part-trigger">
-        <span class="bs-stepper-circle">3</span>
-        <span class="bs-stepper-label">Confirm Budget</span>
-      </button>
-    </div>
-    <!-- END CONFIRM BUDGET HEADER -->
   </div>
   <div class="bs-stepper-content">
     <!-- TOTAL BUDGET CONTENT -->
     <div id="create-part" class="content" role="tabpanel" aria-labelledby="create-part-trigger">
-        <form>
-          <center>
+      <form>
+        <center>
           <div class="col-md-8 mb-3">
             <label for="validationServerUsername">Total Budget</label>
             <div class="input-group">
@@ -43,24 +34,37 @@
               <div class="valid-feedback"></div>
             </div>
           </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Next</button>
+          <button class="btn btn-primary btn-next-form" type="submit">Next</button>
         </center>
       </form>
+    </div>
+    <!-- END TOTAL BUDGET CONTENT -->
+    <!-- BUDGET BREAKDOWN CONTENT -->
+    <div id="breakdown-part" class="content" role="tabpanel" aria-labelledby="breakdown-part-trigger">
+      <form>
+        <center>
+          <div class="col-md-8 mb-3">
+            <label for="validationServerBreakdown">Budget Breakdown</label>
+          </div>
+          <a href="/dashboard">
+            <button class="btn btn-primary" type="submit">Create Budget</button>
+          </a>
+        </center>
+      </form>
+    </div>
+    <!-- END BUDGET BREAKDOWN CONTENT -->
   </div>
-  <!-- END TOTAL BUDGET CONTENT -->
-  <!-- BUDGET BREAKDOWN CONTENT -->
-  <div id="breakdown-part" class="content" role="tabpanel" aria-labelledby="breakdown-part-trigger">
-  </div>
-  <!-- END BUDGET BREAKDOWN CONTENT -->
-  <!-- CONFIRM CONTENT -->
-  <div id="confirm-part" class="content" role="tabpanel" aria-labelledby="confirm-part-trigger">
-  </div>
-  <!-- END CONFIRM CONTENT -->
-</div>
 </div>
 <script type="text/javascript">
 $(document).ready(function () {
   var stepper = new Stepper($('.bs-stepper')[0])
+
+  var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'))
+  btnNextList.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      stepper.next()
+    })
+  })
+
 })
 </script>
