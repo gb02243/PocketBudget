@@ -57,6 +57,9 @@ hr.hr-text::before {
 
 .hero-overlay {
   background: #28a745;
+}
+
+.hero-text {
   color: #FFFFFF;
   text-shadow: 2px 2px 2px #000000;
 }
