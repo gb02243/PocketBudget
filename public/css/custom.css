@@ -10,6 +10,10 @@ a {
   background-color: #6c757d !important;
 }
 
+.active .bs-stepper-circle {
+  background-color: #28a745 !important;
+}
+
 /* HORIZONTAL RULE STYLES */
 hr.dashed {
     border-top: 2px dashed #999;

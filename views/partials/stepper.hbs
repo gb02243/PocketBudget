@@ -1,4 +1,5 @@
-<div class="bs-stepper">
+<div class="bs-stepper" id="stepper">
+  <!-- STEPPER HEADER -->
   <div class="bs-stepper-header" role="tablist">
     <!-- TOTAL BUDGET HEADER -->
     <div class="step" data-target="#create-part">
@@ -18,6 +19,8 @@
     </div>
     <!-- END BUDGET BREAKDOWN HEADER -->
   </div>
+  <!-- END STEPPER HEADER -->
+  <!-- STEPPER CONTENT -->
   <div class="bs-stepper-content">
     <!-- TOTAL BUDGET CONTENT -->
     <div id="create-part" class="content" role="tabpanel" aria-labelledby="create-part-trigger">
@@ -34,7 +37,7 @@
               <div class="valid-feedback"></div>
             </div>
           </div>
-          <button class="btn btn-primary btn-next-form" type="submit">Next</button>
+          <button class="btn btn-success btn-next-form" type="submit" onclick="stepper.next()">Next</button>
         </center>
       </form>
     </div>
@@ -46,25 +49,19 @@
           <div class="col-md-8 mb-3">
             <label for="validationServerBreakdown">Budget Breakdown</label>
           </div>
-          <a href="/dashboard">
-            <button class="btn btn-primary" type="submit">Create Budget</button>
-          </a>
+          <a href="/dashboard"><button class="btn btn-success">Create Budget</button></a>
         </center>
       </form>
     </div>
     <!-- END BUDGET BREAKDOWN CONTENT -->
   </div>
+  <!-- END STEPPER CONTENT -->
 </div>
 <script type="text/javascript">
-$(document).ready(function () {
-  var stepper = new Stepper($('.bs-stepper')[0])
-
-  var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'))
-  btnNextList.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      stepper.next()
-    })
+var stepper
+document.addEventListener('DOMContentLoaded', function () {
+  stepper = new Stepper(document.querySelector('#stepper'), {
+    animation: true
   })
-
 })
 </script>
