@@ -1,49 +1,84 @@
-/* Style the form */
-#regForm {
+#budgetForm {
   background-color: #ffffff;
-  margin: 100px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
+  padding: 1em;
+  text-align: center;
 }
 
-/* Style the input fields */
 input {
   padding: 10px;
   width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
   border: 1px solid #aaaaaa;
 }
 
-/* Mark input boxes that gets an error on validation: */
 input.invalid {
   background-color: #ffdddd;
 }
 
-/* Hide all steps by default: */
 .tab {
   display: none;
 }
 
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+.stepper-header {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  align-items: center;
+  display: flex;
+}
+
+.step-circle {
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  min-width: 2em;
+  padding: .5em 0;
+  margin: 1em;
+  line-height: 1em;
   background-color: #bbbbbb;
   border: none;
   border-radius: 50%;
-  display: inline-block;
   opacity: 0.5;
 }
 
-/* Mark the active step: */
-.step.active {
+
+.step-circle.active {
   opacity: 1;
+  background-color: #28a745;
+  color: #FFFFFF;
 }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
+
+.step-circle.finish {
   background-color: #4CAF50;
+  color: #FFFFFF;
+}
+
+hr {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.stepper-line {
+  flex: 1 0 32px;
+  min-width: 1px;
+  min-height: 1px;
+  background-color: rgba(0, 0, 0, .12);
+  margin-left: 1em;
+  margin-right: 1em;
+  opacity: 0.5;
+}
+
+.stepper-line.regular {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .12);
+}
+
+.stepper-line.finish {
+  flex: 1 0 32px;
+  min-width: 1px;
+  min-height: 1px;
+  background-color: #28a745;
+
 }
