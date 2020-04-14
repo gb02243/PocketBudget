@@ -1,0 +1,115 @@
+<div class="row">
+  <div class="col-6">
+    <form class="pt-5">
+      <div class="form-group">
+        <label for="inputBillsAmount">Bills</label>
+        <div class="input-group mb-3">
+          <input id="inputBillsAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 45">
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputFoodAmount">Food</label>
+        <div class="input-group mb-3">
+          <input id="inputFoodAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 30">
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputGasAmount">Gas</label>
+        <div class="input-group mb-3">
+          <input id="inputGasAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 10">
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputSavingsAmount">Savings</label>
+        <div class="input-group mb-3">
+          <input id="inputSavingsAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 10">
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputFunAmount">Fun</label>
+        <div class="input-group mb-3">
+          <input id="inputFunAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 5">
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-6 my-auto">
+    <h3>Preview</h3>
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+
+
+<script>
+var billAmt=0, foodAmt=0, gasAmt=0, savingsAmt=0, funAmt=0;
+var billInput = document.getElementById('inputBillsAmount');
+var foodInput = document.getElementById('inputFoodAmount');
+var gasInput = document.getElementById('inputGasAmount');
+var savingsInput = document.getElementById('inputSavingsAmount');
+var funInput = document.getElementById('inputFunAmount');
+
+var ctx = document.getElementById('myChart').getContext('2d');
+
+function updateChart(){
+  billAmt = billInput.value;
+  foodAmt = foodInput.value;
+  gasAmt = gasInput.value;
+  savingsAmt = savingsInput.value;
+  funAmt = funInput.value;
+  var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ['Bills', 'Food', 'Gas', 'Savings', 'Fun'],
+          datasets: [{
+              label: '# of Dollars',
+              data: [billAmt, foodAmt, gasAmt, savingsAmt, funAmt],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.8)',
+                  'rgba(54, 162, 235, 0.8)',
+                  'rgba(255, 206, 86, 0.8)',
+                  'rgba(75, 192, 192, 0.8)',
+                  'rgba(153, 102, 255, 0.8)',
+                  'rgba(255, 159, 64, 0.8)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      }
+  });
+}
+
+billInput.onchange = updateChart;
+billInput.onblur = updateChart;
+foodInput.onchange = updateChart;
+foodInput.onblur = updateChart;
+gasInput.onchange = updateChart;
+gasInput.onblur = updateChart;
+savingsInput.onchange = updateChart;
+savingsInput.onblur = updateChart;
+funInput.onchange = updateChart;
+funInput.onblur = updateChart;
+
+</script>

@@ -21,7 +21,7 @@
   </div>
 
   <!-- One "tab" for each step in the form: -->
-  <div class="tab">Enter Budget
+  <div class="tab">
     <p>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -36,14 +36,14 @@
 
   </div>
 
-  <div class="tab">Contact Info:
-    <p><input class="form-control" placeholder="E-mail..." oninput="this.className = ''"></p>
-    <p><input class="form-control" placeholder="Phone..." oninput="this.className = ''"></p>
+  <div class="tab">
+    {{>budget_breakdown}}
   </div>
 
-  <div class="tab">Login Info:
-    <p><input class="form-control" placeholder="Username..." oninput="this.className = ''"></p>
-    <p><input class="form-control" placeholder="Password..." oninput="this.className = ''"></p>
+  <div class="tab">
+    <div class="row">
+      <h3>How does this look?</h3>
+    </div>
   </div>
 
   <div style="overflow:auto;">
