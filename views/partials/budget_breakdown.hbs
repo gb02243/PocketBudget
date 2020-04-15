@@ -51,13 +51,15 @@
 
   <div class="col-6 my-auto">
     <h3>Preview</h3>
+    <p>(In $USD)</p>
     <canvas id="myChart"></canvas>
   </div>
 </div>
 
 
 <script>
-var billAmt=0, foodAmt=0, gasAmt=0, savingsAmt=0, funAmt=0;
+var totalBudgetInput = document.getElementById('totalBudget');
+var budgetAmt=0, billAmt=0, foodAmt=0, gasAmt=0, savingsAmt=0, funAmt=0;
 var billInput = document.getElementById('inputBillsAmount');
 var foodInput = document.getElementById('inputFoodAmount');
 var gasInput = document.getElementById('inputGasAmount');
@@ -66,12 +68,40 @@ var funInput = document.getElementById('inputFunAmount');
 
 var ctx = document.getElementById('myChart').getContext('2d');
 
-function updateChart(){
-  billAmt = billInput.value;
-  foodAmt = foodInput.value;
-  gasAmt = gasInput.value;
-  savingsAmt = savingsInput.value;
-  funAmt = funInput.value;
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Bills', 'Food', 'Gas', 'Savings', 'Fun'],
+        datasets: [{
+            label: '# of Dollars',
+            data: [billAmt, foodAmt, gasAmt, savingsAmt, funAmt],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    }
+});
+
+function updateChart() {
+  billAmt = (billInput.value*0.01)*totalBudget;
+  foodAmt = (foodInput.value*0.01)*totalBudget;
+  gasAmt = (gasInput.value*0.01)*totalBudget;
+  savingsAmt = (savingsInput.value*0.01)*totalBudget;
+  funAmt = (funInput.value*0.01)*totalBudget;
   var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -100,6 +130,13 @@ function updateChart(){
       }
   });
 }
+
+function getTotalBudget() {
+  totalBudget = totalBudgetInput.value;
+}
+
+totalBudgetInput.onchange = getTotalBudget;
+totalBudgetInput.onblur = getTotalBudget;
 
 billInput.onchange = updateChart;
 billInput.onblur = updateChart;
