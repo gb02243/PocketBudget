@@ -11,11 +11,20 @@
   <!-- HEADER -->
   {{>navbar}}
   <!-- END HEADER -->
-  <section id="stepper" class="h-100 hero-overlay d-flex align-items-center jarallax">
-    <div class="container">
+  <section class="h-100 hero-overlay d-flex align-items-center jarallax">
+    <div class="container mt-5">
       <div class="card">
         <div class="card-body">
-          test
+          <center>
+            <h1>Welcome, </h1>
+            <hr />
+            <h3>Current Budget</h3><br />
+            <h4>${{totalBudget}}</h4>
+            <h3>Remaining Funds</h3><br />
+            <h4>${{remainingFunds}}</h4>
+            <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">Enter Transaction</button><br />
+            <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">View Transactions</button><br />
+          </center>
         </div>
       </div>
     </div>

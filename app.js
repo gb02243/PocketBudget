@@ -24,8 +24,6 @@ const conn = mysql.createConnection({
   database: 'pocketbudget'
 });
 
-var billAmt, foodAmt, gasAmt, savingsAmt, funAmt;
-
 //connect to database
 conn.connect((err) =>{
   if(err) throw err;
@@ -37,9 +35,31 @@ app.set('views',path.join(__dirname,'views'));
 //set view engine
 app.set('view engine', 'hbs');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 //set public folder as static folder for static file
 app.use('/assets',express.static(__dirname + '/public'));
+app.use('/', router);
+
+var billAmt, foodAmt, gasAmt, savingsAmt, funAmt, totalBudget, remainingFunds;
+
+//post for submit budget
+app.post('/submitBudget', (req, res) => {
+  inputBillsAmt = req.body.inputBillsAmount;
+  inputFoodAmt = req.body.inputFoodAmount;
+  inputGasAmt = req.body.inputGasAmount;
+  inputSavingsAmt = req.body.inputSavingsAmount;
+  inputFunAmt = req.body.inputFunAmount;
+  inputBudgetAmt = req.body.inputBudgetAmt;
+  totalBudget = inputBudgetAmt;
+
+  billAmt = (inputBillsAmt*0.01)*inputBudgetAmt;
+  foodAmt = (inputFoodAmt*0.01)*inputBudgetAmt;
+  gasAmt = (inputGasAmt*0.01)*inputBudgetAmt;
+  savingsAmt = (inputSavingsAmt*0.01)*inputBudgetAmt;
+  funAmt = (inputFunAmt*0.01)*inputBudgetAmt;
+
+  res.redirect('dashboard');
+});
 
 //route for homepage
 app.get('/',(req, res) => {
@@ -58,7 +78,14 @@ app.get('/create_budget',(req, res) => {
 
 //route for dashboard
 app.get('/dashboard',(req, res) => {
-  res.render('dashboard');
+  res.render('dashboard', {
+    billAmt:billAmt,
+    foodAmt:foodAmt,
+    gasAmt:gasAmt,
+    savingsAmt:savingsAmt,
+    funAmt:funAmt,
+    totalBudget:totalBudget
+  });
 });
 
 //server listening

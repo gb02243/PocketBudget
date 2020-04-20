@@ -4,7 +4,7 @@
       <div class="form-group">
         <label for="inputBillsAmount">Bills</label>
         <div class="input-group mb-3">
-          <input id="inputBillsAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 45">
+          <input name="inputBillsAmount" id="inputBillsAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 45">
           <div class="input-group-append">
             <span class="input-group-text">%</span>
           </div>
@@ -13,7 +13,7 @@
       <div class="form-group">
         <label for="inputFoodAmount">Food</label>
         <div class="input-group mb-3">
-          <input id="inputFoodAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 30">
+          <input name="inputFoodAmount" id="inputFoodAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 30">
           <div class="input-group-append">
             <span class="input-group-text">%</span>
           </div>
@@ -22,7 +22,7 @@
       <div class="form-group">
         <label for="inputGasAmount">Gas</label>
         <div class="input-group mb-3">
-          <input id="inputGasAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 10">
+          <input name="inputGasAmount" id="inputGasAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 10">
           <div class="input-group-append">
             <span class="input-group-text">%</span>
           </div>
@@ -31,7 +31,7 @@
       <div class="form-group">
         <label for="inputSavingsAmount">Savings</label>
         <div class="input-group mb-3">
-          <input id="inputSavingsAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 10">
+          <input name="inputSavingsAmount" id="inputSavingsAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 10">
           <div class="input-group-append">
             <span class="input-group-text">%</span>
           </div>
@@ -40,7 +40,7 @@
       <div class="form-group">
         <label for="inputFunAmount">Fun</label>
         <div class="input-group mb-3">
-          <input id="inputFunAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 5">
+          <input name="inputFunAmount" id="inputFunAmount" type="text" class="form-control" aria-label="Amount (percentage)" placeholder="e.g. 5">
           <div class="input-group-append">
             <span class="input-group-text">%</span>
           </div>
@@ -152,6 +152,6 @@ savingsInput.onblur = updateChart;
 funInput.onchange = updateChart;
 funInput.onblur = updateChart;
 
-nextBtn.addEventListener("click", updateBudget);
+// nextBtn.addEventListener("click", updateBudget);
 
 </script>
