@@ -1,0 +1,84 @@
+#budgetForm {
+  background-color: #ffffff;
+  padding: 1em;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #aaaaaa;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+.tab {
+  display: none;
+}
+
+.stepper-header {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  align-items: center;
+  display: flex;
+}
+
+.step-circle {
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  min-width: 2em;
+  padding: .5em 0;
+  margin: 1em;
+  line-height: 1em;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+
+.step-circle.active {
+  opacity: 1;
+  background-color: #28a745;
+  color: #FFFFFF;
+}
+
+
+.step-circle.finish {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+}
+
+hr {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.stepper-line {
+  flex: 1 0 32px;
+  min-width: 1px;
+  min-height: 1px;
+  background-color: rgba(0, 0, 0, .12);
+  margin-left: 1em;
+  margin-right: 1em;
+  opacity: 0.5;
+}
+
+.stepper-line.regular {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .12);
+}
+
+.stepper-line.finish {
+  flex: 1 0 32px;
+  min-width: 1px;
+  min-height: 1px;
+  background-color: #28a745;
+
+}
