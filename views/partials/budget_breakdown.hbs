@@ -56,7 +56,6 @@
   </div>
 </div>
 
-
 <script>
 var totalBudgetInput = document.getElementById('totalBudget');
 var budgetAmt=0, billAmt=0, foodAmt=0, gasAmt=0, savingsAmt=0, funAmt=0;
@@ -65,6 +64,8 @@ var foodInput = document.getElementById('inputFoodAmount');
 var gasInput = document.getElementById('inputGasAmount');
 var savingsInput = document.getElementById('inputSavingsAmount');
 var funInput = document.getElementById('inputFunAmount');
+
+var nextBtn = document.getElementById('nextBtn');
 
 var ctx = document.getElementById('myChart').getContext('2d');
 
@@ -97,6 +98,8 @@ var myChart = new Chart(ctx, {
 });
 
 function updateChart() {
+  getTotalBudget();
+
   billAmt = (billInput.value*0.01)*totalBudget;
   foodAmt = (foodInput.value*0.01)*totalBudget;
   gasAmt = (gasInput.value*0.01)*totalBudget;
@@ -148,5 +151,7 @@ savingsInput.onchange = updateChart;
 savingsInput.onblur = updateChart;
 funInput.onchange = updateChart;
 funInput.onblur = updateChart;
+
+nextBtn.addEventListener("click", updateBudget);
 
 </script>

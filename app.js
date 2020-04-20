@@ -8,7 +8,10 @@ const hbs = require('hbs');
 const bodyParser = require('body-parser');
 //use mysql database
 const mysql = require('mysql');
+// create express app
 const app = express();
+//create router
+const router = express.Router();
 
 //register partials
 hbs.registerPartials(__dirname + '/views/partials');
@@ -20,6 +23,8 @@ const conn = mysql.createConnection({
   password: 'hci2020',
   database: 'pocketbudget'
 });
+
+var billAmt, foodAmt, gasAmt, savingsAmt, funAmt;
 
 //connect to database
 conn.connect((err) =>{

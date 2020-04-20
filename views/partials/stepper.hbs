@@ -42,7 +42,29 @@
 
   <div class="tab">
     <div class="row">
-      <h3>How does this look?</h3>
+      <div class="container">
+        <center>
+          <h3>Confirm your Budget</h3>
+          <hr />
+          <div class="col-12">
+            <h4>Bills</h4>
+            <p id="billsDisplay"></p>
+            <h4>Food</h4>
+            <p id="foodDisplay"></p>
+            <h4>Gas</h4>
+            <p id="gasDisplay"></p>
+            <h4>Savings</h4>
+            <p id="savingsDisplay"></p>
+            <h4>Fun</h4>
+            <p id="funDisplay"></p>
+          </div>
+          <!--
+          <p>
+            Bills, food, gas, savings, fun
+          </p>
+          -->
+        </center>
+      </div>
     </div>
   </div>
 
@@ -54,3 +76,45 @@
   </div>
 
 </form>
+
+<script type="text/javascript">
+var totalBudgetInput = document.getElementById('totalBudget');
+var budgetAmt=0, billAmt=0, foodAmt=0, gasAmt=0, savingsAmt=0, funAmt=0;
+var billInput = document.getElementById('inputBillsAmount');
+var foodInput = document.getElementById('inputFoodAmount');
+var gasInput = document.getElementById('inputGasAmount');
+var savingsInput = document.getElementById('inputSavingsAmount');
+var funInput = document.getElementById('inputFunAmount');
+
+var nextBtn = document.getElementById('nextBtn');
+
+var billsDisplay = document.getElementById('billsDisplay');
+var foodDisplay = document.getElementById('foodDisplay');
+var gasDisplay = document.getElementById('gasDisplay');
+var savingsDisplay = document.getElementById('savingsDisplay');
+var funDisplay = document.getElementById('funDisplay');
+
+
+function getTotalBudget() {
+  totalBudget = totalBudgetInput.value;
+}
+
+function updateBudget() {
+  getTotalBudget();
+  billAmt = (billInput.value*0.01)*totalBudget;
+  foodAmt = (foodInput.value*0.01)*totalBudget;
+  gasAmt = (gasInput.value*0.01)*totalBudget;
+  savingsAmt = (savingsInput.value*0.01)*totalBudget;
+  funAmt = (funInput.value*0.01)*totalBudget;
+
+  billsDisplay.innerHTML = "$"+billAmt;
+  foodDisplay.innerHTML = "$"+foodAmt;
+  gasDisplay.innerHTML = "$"+gasAmt;
+  savingsDisplay.innerHTML = "$"+savingsAmt;
+  funDisplay.innerHTML = "$"+funAmt;
+}
+
+nextBtn.addEventListener("click", updateBudget);
+
+
+</script>
