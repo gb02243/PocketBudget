@@ -61,6 +61,10 @@ app.get('/dashboard',(req, res) => {
   res.render('dashboard');
 });
 
+app.get('/enter_transaction', (req, res) => {
+  res.render('enter_transaction');
+});
+
 //server listening
 app.listen(8000, () => {
   console.log('Server is running at port 8000');
