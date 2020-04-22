@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Transactions - PocketBudget</title>
+        {{>global_links}}
+        <!-- Stepper -->
+        <link rel="stylesheet" href="https://unpkg.com/bs-stepper/dist/css/bs-stepper.min.css">
+        <script src="https://unpkg.com/bs-stepper/dist/js/bs-stepper.min.js"></script>
+    </head>
+
+    <body>
+        <!-- HEADER calls navbar.hbs-->
+        {{>navbar2}}
+        <!-- END HEADER -->
+
+      <!-- HERO -->
+        <section id="hero" class="mt-5 pt-2">
+            <center>
+                <div class="jumbotron jumbotron-fluid h-100 jarallax hero-overlay hero-text">
+                    <div class="container">
+                        <div class="row h-100">
+                            <div class="col-sm-12 my-auto">
+                                <h1 class="display-2">PocketBudget</h1>
+                                <h2 class="lead">Transactions</h2>
+                                <hr class="solid big_margin">
+                            </div>
+                        </div>
+                    </div>
+                    <img class="jarallax-img opacity-75" src="https://images.unsplash.com/photo-1504983376254-592a0ea9b0cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3291&q=80">
+                </div>
+            </center>
+        </section>
+      <!-- END HERO -->
+
+      <!-- Start Query Transaction -->
+        <section id="transaction" class="bg-white">
+              <center>
+                  <div class="container">
+                      <h1>Transactions</h1>
+                  </div>
+              </center>
+        </section>
+      <!-- End Query Transaction -->
+
+        <!-- FOOTER calls footer.hbs-->
+        {{>footer}}
+        <!-- END FOOTER -->
+
+        <script type="text/javascript">
+            jarallax(document.querySelectorAll('.jarallax'));
+        </script>
+    </body>
+</html>
