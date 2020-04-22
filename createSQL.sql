@@ -20,6 +20,7 @@ CREATE TABLE `budget` (
     `food_percent`		double(5, 1)	DEFAULT 0	NOT NULL,
     `gas_percent`		double(5, 1)	DEFAULT 0	NOT NULL,
     `savings_percent`	double(5, 1)	DEFAULT 0	NOT NULL,
+    `fun_percent`		double(5, 1)	DEFAULT 0	NOT NULL,
     PRIMARY KEY (`budget_id`),
     FOREIGN KEY (`user_id`) REFERENCES users(`user_id`)
 );
@@ -30,8 +31,8 @@ insert into `users` (username, password, name) values
 ('dmartin', 'martin', 'Dallas Martin'),
 ('tburkey', 'burkey', 'Toby Burkey');
 
-insert into `budget` (user_id, amount_total, bills_percent, food_percent, gas_percent, savings_percent) values
-(1, 100, 25, 25, 25, 25),
-(2, 100, 25, 25, 25, 25),
-(3, 100, 25, 25, 25, 25),
-(4, 100, 25, 25, 25, 25);
+insert into `budget` (user_id, amount_total, bills_percent, food_percent, gas_percent, savings_percent, fun_percent) values
+(1, 100, 20, 20, 20, 20, 20),
+(2, 100, 20, 20, 20, 20, 20),
+(3, 100, 20, 20, 20, 20, 20),
+(4, 100, 20, 20, 20, 20, 20);
