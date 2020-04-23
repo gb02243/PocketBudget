@@ -64,11 +64,11 @@ app.get('/dashboard',(req, res) => {
 // route for enter_transaction
 app.get('/enter_transaction', (req, res) => {
   res.render('enter_transaction');
-  
+});
+
   //route for transactions
 app.get('/transaction',(req, res) => {
   res.render('transaction');
-
 });
 
 //server listening
