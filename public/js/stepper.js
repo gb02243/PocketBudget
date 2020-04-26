@@ -13,8 +13,12 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
+    // document.getElementById("submitSection").style.display = "inline";
+    // document.getElementById("nextBtn").style.display = "none";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
+    // document.getElementById("submitSection").style.display = "none";
+    // document.getElementById("nextBtn").style.display = "inline";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
@@ -32,7 +36,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    document.getElementById("budgetForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
@@ -57,7 +61,7 @@ function validateForm() {
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step-circle")[currentTab].className += " finish";
-    document.getElementsByClassName("stepper-line")[currentTab].className += " finish";
+    // document.getElementsByClassName("stepper-line")[currentTab].className += " finish";
   }
   return valid; // return the valid status
 }
@@ -71,5 +75,5 @@ function fixStepIndicator(n) {
 
   //... and adds the "active" class to the current step:
   x[n].className += " active";
-  e[n].className += " regular";
+  // e[n].className += " regular";
 }

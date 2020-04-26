@@ -15,7 +15,6 @@ CREATE TABLE `users` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
-
 CREATE TABLE `budget` (
 	`budget_id`			int(11)						NOT NULL	AUTO_INCREMENT,
     `user_id`			int(11)						NOT NULL,
@@ -28,6 +27,7 @@ CREATE TABLE `budget` (
     PRIMARY KEY (`budget_id`),
     FOREIGN KEY (`user_id`) REFERENCES users(`user_id`)
 );
+
 
 insert into `users` (fullname, email, password, city, state, zip) values
 ('Brandon Derricho', 'bderricho@pocketbudget.com', 'derricho', 'Statesboro', 'GA', 30458),
