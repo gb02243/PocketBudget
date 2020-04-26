@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Transactions - PocketBudget</title>
+        {{>global_links}}
+        <!-- Stepper -->
+        <link rel="stylesheet" href="https://unpkg.com/bs-stepper/dist/css/bs-stepper.min.css">
+        <script src="https://unpkg.com/bs-stepper/dist/js/bs-stepper.min.js"></script>
+    </head>
+
+    <body>
+        <!-- HEADER calls navbar.hbs-->
+        {{>navbar2}}
+        <!-- END HEADER -->
+
+      <!-- Start View Transactions -->
+        <section id="stepper" class="h-100 hero-overlay d-flex align-items-center jarallax">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 style="text-align:center;">View Transactions</h1>
+                            <hr>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <img class="jarallax-img opacity-75" src="https://images.unsplash.com/photo-1504983376254-592a0ea9b0cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3291&q=80">
+        </section>
+      <!-- END View Transactions -->
+
+
+        <!-- FOOTER calls footer.hbs-->
+        {{>footer}}
+        <!-- END FOOTER -->
+
+        <script type="text/javascript">
+            jarallax(document.querySelectorAll('.jarallax'));
+        </script>
+    </body>
+</html>

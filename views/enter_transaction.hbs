@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Enter Transaction - PocketBudget</title>
+  {{>global_links}}
+  <!-- Stepper -->
+  <link rel="stylesheet" href="https://unpkg.com/bs-stepper/dist/css/bs-stepper.min.css">
+  <link rel="stylesheet" href="assets/css/stepper.css">
+  <script src="https://unpkg.com/bs-stepper/dist/js/bs-stepper.min.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  {{>navbar2}}
+  <!-- END HEADER -->
+  <section id="stepper" class="h-100 hero-overlay d-flex align-items-center jarallax">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <form id="transForm" action="">
+            <h1>Enter Transaction</h1>
+            <hr />
+            <br />
+            <h3>Category</h3>
+            <select class="form-control">
+              <option>Bills</option>
+              <option>Food</option>
+              <option>Gas</option>
+              <option>Other</option>
+            </select>
+            <br />
+            <h3>Amount</h3>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input id="transAmount" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="e.g. 50">
+            </div>
+            <button type="submit" class="btn btn-success">Add Transaction</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <img class="jarallax-img opacity-75" src="https://images.unsplash.com/photo-1504983376254-592a0ea9b0cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3291&q=80">
+  </section>
+  <!-- FOOTER -->
+  {{>footer}}
+  <!-- END FOOTER -->
+  <script type="text/javascript">
+  jarallax(document.querySelectorAll('.jarallax'));
+  </script>
+</body>
+</html>

@@ -9,27 +9,64 @@
 </head>
 <body>
   <!-- HEADER -->
-  {{>navbar}}
+  {{>navbar2}}
   <!-- END HEADER -->
-  <section class="h-100 hero-overlay d-flex align-items-center jarallax">
-    <div class="container mt-5">
-      <div class="card">
-        <div class="card-body">
+  <section class="h-100 hero-overlay d-flex jarallax pt-5">
+    <div class="container dashboard-bg mt-5 mb-5">
+      <div class="row justify-content-center">
+        <h1>Welcome, {NAME HERE}</h1>
+      </div>
+
+      <div class="row">
+        <div class="col justify-content-center">
           <center>
-            <h1>Welcome, </h1>
-            <hr />
-            <h3>Current Budget</h3><br />
-            <h4>${{totalBudget}}</h4>
-            <h3>Remaining Funds</h3><br />
-            <h4>${{remainingFunds}}</h4>
-            <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">Enter Transaction</button><br />
-            <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">View Transactions</button><br />
+            <h2>Current Budget</h2>
+            <p>
+              Senserit aliqua dolor aut aliqua sed export nam litteris. E tempor veniam culpa
+              possumus te fore cernantur vidisse, quae illustriora consequat culpa aliquip, an
+              cupidatat id litteris. Elit incurreret graviterque, qui illum constias, tamen an
+              do quis quamquam est magna se incurreret ita tempor. Minim nescius
+              concursionibus, occaecat arbitrantur iis senserit te ita summis eram malis
+              pariatur, nisi ex hic magna litteris, eram aliquip est comprehenderit, excepteur
+              quem consequat hic consequat reprehenderit et occaecat, ubi magna deserunt.Ad
+              quae se esse, si anim adipisicing, litteris summis hic eiusmod adipisicing,
+              appellat multos senserit mandaremus. Arbitror velit quid non veniam. Id a
+              tractavissent.
+            </p>
+          </center>
+        </div>
+        <div class="col justify-content-center">
+          <center>
+            <h2>Current Spending</h2>
+            <p>
+              Senserit aliqua dolor aut aliqua sed export nam litteris. E tempor veniam culpa
+              possumus te fore cernantur vidisse, quae illustriora consequat culpa aliquip, an
+              cupidatat id litteris. Elit incurreret graviterque, qui illum constias, tamen an
+              do quis quamquam est magna se incurreret ita tempor. Minim nescius
+              concursionibus, occaecat arbitrantur iis senserit te ita summis eram malis
+              pariatur, nisi ex hic magna litteris, eram aliquip est comprehenderit, excepteur
+              quem consequat hic consequat reprehenderit et occaecat, ubi magna deserunt.Ad
+              quae se esse, si anim adipisicing, litteris summis hic eiusmod adipisicing,
+              appellat multos senserit mandaremus. Arbitror velit quid non veniam. Id a
+              tractavissent.
+            </p>
           </center>
         </div>
       </div>
+
+      <div class="row justify-content-center mt-5">
+        <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">Enter Transaction</button>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">View Transactions</button>
+      </div>
+
     </div>
     <img class="jarallax-img opacity-75" src="https://images.unsplash.com/photo-1504983376254-592a0ea9b0cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3291&q=80">
   </section>
+
+
+
   <!-- FOOTER -->
   {{>footer}}
   <!-- END FOOTER -->

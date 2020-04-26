@@ -6,6 +6,13 @@ a {
   color: #28a745;
 }
 
+.dashboard-bg {
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
+  overflow: hidden;
+}
+
 .btn-secondary {
   background-color: #6c757d !important;
 }
