@@ -8,32 +8,22 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action='/signup' method='POST'>
           <div class="form-row">
             <div class="col-md-4 mb-3">
-              <label for="validationServer01">First name</label>
-              <input type="text" class="form-control is-invalid" id="validationServer01" placeholder="First"required>
+              <label for="fullname">Full Name</label>
+              <input type="text" class="form-control is-invalid" id="fullname" name="fullname" placeholder="Full Name"required>
               <div class="invalid-feedback">
-                Please enter your first name.
+                Please enter your fullname.
               </div>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-4 mb-3">
-              <label for="validationServer02">Last name</label>
-              <input type="text" class="form-control is-invalid" id="validationServer02" placeholder="Last" required>
-              <div class="invalid-feedback">
-                Please enter your last name.
-              </div>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="validationServerUsername">Email Address</label>
+              <label for="email">Email Address</label>
               <div class="input-group">
-                <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="email@example.com" aria-describedby="inputGroupPrepend3" required>
+                <input type="text" class="form-control is-invalid" id="email" name="email" placeholder="email@example.com" aria-describedby="inputGroupPrepend3" required>
                 <div class="invalid-feedback">
                   Please enter a valid email address.
                 </div>
@@ -42,11 +32,21 @@
                 </div>
               </div>
             </div>
+            <div class="col-md-4 mb-3">
+              <label for="password">Password</label>
+              <input type="password" class="form-control is-invalid" id="password" name="password" placeholder="Password" required>
+              <div class="invalid-feedback">
+                Please enter your password.
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
           </div>
           <div class="form-row">
             <div class="col-md-6 mb-3">
-              <label for="validationServer03">City</label>
-              <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
+              <label for="city">City</label>
+              <input type="text" class="form-control is-invalid" id="city" name="city" placeholder="City" required>
               <div class="invalid-feedback">
                 Please provide a valid city.
               </div>
@@ -55,8 +55,8 @@
               </div>
             </div>
             <div class="col-md-3 mb-3">
-              <label for="validationServer04">State</label>
-              <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
+              <label for="state">State</label>
+              <input type="text" class="form-control is-invalid" id="state" name="state" placeholder="State" required>
               <div class="invalid-feedback">
                 Please provide a valid state.
               </div>
@@ -65,8 +65,8 @@
               </div>
             </div>
             <div class="col-md-3 mb-3">
-              <label for="validationServer05">Zip</label>
-              <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
+              <label for="zip">Zip</label>
+              <input type="text" class="form-control is-invalid" id="zip" name="zip" placeholder="Zip" required>
               <div class="invalid-feedback">
                 Please provide a valid zip.
               </div>
@@ -86,13 +86,11 @@
               </div>
             </div>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Create Account</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="/create_budget">
-          <button type="submit" class="btn btn-success">Create Account</button>
-        </a>
       </div>
     </div>
   </div>
