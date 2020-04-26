@@ -68,7 +68,36 @@ app.get('/enter_transaction', (req, res) => {
 
   //route for transactions
 app.get('/transaction',(req, res) => {
+
   res.render('transaction');
+});
+
+app.post('/signup', (req, res) => {
+  var user = {
+    fullname: req.body.fullname,
+    email: req.body.email,
+    password: req.body.password,
+    city: req.body.city,
+    state: req.body.state,
+    zip: req.body.zip
+  };
+  var query = `INSERT INTO users (fullname, email, password, city, state, zip) VALUES ('${user.fullname}', '${user.email}', '${user.password}', '${user.city}', '${user.state}', ${user.zip})`;
+  conn.query(query, function(err, result) {
+    if (err) console.log(err);
+    res.redirect('create_budget');
+  });
+});
+
+app.post('/login', (req, res) => {
+  var login = { email: req.body.email, password: req.body.password };
+  if(login.email && login.password){
+    var query = `SELECT * FROM users WHERE email = '${login.email}' AND password = '${login.password}'`;
+    conn.query(query, function(err, result) {
+      if(err) console.log(err);
+      if(result.length > 0) res.redirect('dashboard');
+      else res.send('Invalid email and password!');
+    });
+  }else res.send('Please enter an email and password!');
 });
 
 //server listening
