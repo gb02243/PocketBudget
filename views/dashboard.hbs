@@ -13,36 +13,49 @@
   <!-- END HEADER -->
   <section class="h-100 hero-overlay d-flex jarallax pt-5">
     <div class="container dashboard-bg mt-5 mb-5">
-      <div class="row justify-content-center pb-5">
+      <div class="row justify-content-center">
         <h1>Welcome, <b>{{fullname}}</b></h1>
       </div>
+      <hr />
 
       <div class="row">
         <div class="col justify-content-center">
           <center>
-            <h2>Current Budget: ${{amount_total}}</h2>
+            <h2>Current Budget: $<span id="totalBudgetNumber">{{amount_total}}</span></h2>
             <p>(In $USD)</p>
             <canvas id="currentBudgetChart"></canvas>
-            <p>Bills: $<span id="billsAmount">{{billAmt}}</span></p>
-            <p>Food: $<span id="foodAmount">{{foodAmt}}</span></p>
-            <p>Gas: $<span id="gasAmount">{{gasAmt}}</span></p>
-            <p>Savings: $<span id="savingsAmount">{{savingsAmt}}</span></p>
-            <p>Fun: $<span id="funAmount">{{funAmt}}</span></p>
+            <br />
+            <p>
+              Bills: $<span id="billsAmount">{{billAmt}}</span><br />
+              Food: $<span id="foodAmount">{{foodAmt}}</span><br />
+              Gas: $<span id="gasAmount">{{gasAmt}}</span><br />
+              Savings: $<span id="savingsAmount">{{savingsAmt}}</span><br />
+              Fun: $<span id="funAmount">{{funAmt}}</span>
+            </p>
           </center>
         </div>
         <div class="col justify-content-center">
           <center>
-            <h2>Current Spending</h2>
-
+            <h2>Current Spending: <span id="totalSpendingArea">$<span id="totalSpendingNumber">{{totalSpending}}</span></span></h2>
+            <p>(In $USD)</p>
+            <canvas id="currentSpendingChart"></canvas>
+            <br />
+            <p>
+              Bills: <span id="billSpendingArea">$<span id="spendingBillsAmount">{{spendingBillAmt}}</span></span><br />
+              Food: <span id="foodSpendingArea">$<span id="spendingFoodAmount">{{spendingFoodAmt}}</span></span><br />
+              Gas: <span id="gasSpendingArea">$<span id="spendingGasAmount">{{spendingGasAmt}}</span></span><br />
+              Savings: <span id="savingsSpendingArea">$<span id="spendingSavingsAmount">{{spendingSavingsAmt}}</span></span><br />
+              Fun: <span id="funSpendingArea">$<span id="spendingFunAmount">{{spendingFunAmt}}</span></span>
+            </p>
           </center>
         </div>
       </div>
 
       <div class="row justify-content-center mt-5">
-        <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">Enter Transaction</button>
+        <a href="/enter_transaction"><button class="btn btn-success btn-lg mx-5" type="button">Enter Transaction</button></a>
       </div>
       <div class="row justify-content-center mt-2">
-        <button class="btn btn-success btn-lg mx-5" type="button" data-toggle="modal" data-target="">View Transactions</button>
+        <a href="/view_transactions"><button class="btn btn-success btn-lg mx-5" type="button">View Transactions</button></a>
       </div>
 
     </div>
@@ -60,6 +73,52 @@
   <script type="text/javascript">
   jarallax(document.querySelectorAll('.jarallax'));
   </script>
+  <!-- Indication Colors -->
+  <script type="text/javascript">
+  var totalSpendingArea = document.getElementById('totalSpendingArea');
+  var billSpendingArea = document.getElementById('billSpendingArea');
+  var foodSpendingArea = document.getElementById('foodSpendingArea');
+  var gasSpendingArea = document.getElementById('gasSpendingArea');
+  var savingsSpendingArea = document.getElementById('savingsSpendingArea');
+  var funSpendingArea = document.getElementById('funSpendingArea');
+
+  if({{amount_total}} > {{totalSpending}}){
+    totalSpendingArea.style.color="green";
+  }else{
+    totalSpendingArea.style.color="red";
+  }
+
+  if({{billAmt}} > {{spendingBillAmt}}){
+    billSpendingArea.style.color="green";
+  }else{
+    billSpendingArea.style.color="red";
+  }
+
+  if({{foodAmt}} > {{spendingFoodAmt}}){
+    foodSpendingArea.style.color="green";
+  }else{
+    foodSpendingArea.style.color="red";
+  }
+
+  if({{gasAmt}} > {{spendingGasAmt}}){
+    gasSpendingArea.style.color="green";
+  }else{
+    gasSpendingArea.style.color="red";
+  }
+
+  if({{savingsAmt}} > {{spendingSavingsAmt}}){
+    savingsSpendingArea.style.color="green";
+  }else{
+    savingsSpendingArea.style.color="red";
+  }
+
+  if({{funAmt}} > {{spendingFunAmt}}){
+    funSpendingArea.style.color="green";
+  }else{
+    funSpendingArea.style.color="red";
+  }
+  </script>
+  <!-- Budget Chart -->
   <script>
   var billAmt = document.getElementById('billsAmount').textContent;
   var foodAmt= document.getElementById('foodAmount').textContent;
@@ -70,31 +129,69 @@
   var ctx = document.getElementById('currentBudgetChart').getContext('2d');
 
   var currentBudgetChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-          labels: ['Bills', 'Food', 'Gas', 'Savings', 'Fun'],
-          datasets: [{
-              label: '# of Dollars',
-              data: [billAmt, foodAmt, gasAmt, savingsAmt, funAmt],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.8)',
-                  'rgba(54, 162, 235, 0.8)',
-                  'rgba(255, 206, 86, 0.8)',
-                  'rgba(75, 192, 192, 0.8)',
-                  'rgba(153, 102, 255, 0.8)',
-                  'rgba(255, 159, 64, 0.8)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1
-          }]
-      }
+    type: 'pie',
+    data: {
+      labels: ['Bills', 'Food', 'Gas', 'Savings', 'Fun'],
+      datasets: [{
+        label: '# of Dollars',
+        data: [billAmt, foodAmt, gasAmt, savingsAmt, funAmt],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.8)',
+          'rgba(54, 162, 235, 0.8)',
+          'rgba(255, 206, 86, 0.8)',
+          'rgba(75, 192, 192, 0.8)',
+          'rgba(153, 102, 255, 0.8)',
+          'rgba(255, 159, 64, 0.8)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    }
+  });
+  </script>
+  <!-- Spending Chart -->
+  <script>
+  var spendingBillAmt = document.getElementById('spendingBillsAmount').textContent;
+  var spendingFoodAmt= document.getElementById('spendingFoodAmount').textContent;
+  var spendingGasAmt = document.getElementById('spendingGasAmount').textContent;
+  var spendingSavingsAmt = document.getElementById('spendingSavingsAmount').textContent;
+  var spendingFunAmt = document.getElementById('spendingFunAmount').textContent;
+
+  var ctx = document.getElementById('currentSpendingChart').getContext('2d');
+
+  var currentSpendingChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Bills', 'Food', 'Gas', 'Savings', 'Fun'],
+      datasets: [{
+        label: '# of Dollars',
+        data: [spendingBillAmt, spendingFoodAmt, spendingGasAmt, spendingSavingsAmt, spendingFunAmt],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.8)',
+          'rgba(54, 162, 235, 0.8)',
+          'rgba(255, 206, 86, 0.8)',
+          'rgba(75, 192, 192, 0.8)',
+          'rgba(153, 102, 255, 0.8)',
+          'rgba(255, 159, 64, 0.8)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    }
   });
   </script>
 </body>

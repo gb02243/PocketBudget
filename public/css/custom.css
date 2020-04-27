@@ -13,6 +13,13 @@ a {
   overflow: hidden;
 }
 
+.transactions-bg {
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
+  overflow: scroll;
+}
+
 .btn-secondary {
   background-color: #6c757d !important;
 }
