@@ -12,7 +12,7 @@
 
   <!-- Start View Transactions -->
   <section class="h-100 hero-overlay d-flex jarallax pt-5">
-    <div class="container dashboard-bg mt-5 mb-5">
+    <div class="container transactions-bg mt-5 mb-5">
       <div class="row justify-content-center pb-5">
         <h1>Transactions</h1>
       </div>
@@ -27,13 +27,13 @@
             </tr>
           </thead>
           <tbody>
-            <!-- each -->
+            {{#each result}}
             <tr>
-              <td>test</td>
-              <td>test</td>
-              <td>test</td>
+              <td>{{this.transaction_id}}</td>
+              <td>{{this.description}}</td>
+              <td>${{this.amount}}</td>
             </tr>
-            <!-- end each -->
+            {{/each}}
           </tbody>
         </table>
       </div>

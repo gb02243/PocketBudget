@@ -8,20 +8,20 @@
   <!-- HEADER -->
   {{>navbar2}}
   <!-- END HEADER -->
-  <sectionclass="h-100 hero-overlay d-flex align-items-center jarallax">
+  <section class="h-100 hero-overlay d-flex align-items-center jarallax">
     <div class="container">
       <div class="card">
-        <div class="card-body">
-          <form id="transForm" action="">
-            <h1>Enter Transaction</h1>
+        <div class="card-body px-5">
+          <form id="transForm" action="/submitTransaction" method="POST">
+            <center><h1>Enter Transaction</h1>
             <hr />
-            <br />
             <h3>Category</h3>
-            <select class="form-control">
+            <select class="form-control" name="transCategory" id="transCategory">
               <option>Bills</option>
               <option>Food</option>
               <option>Gas</option>
-              <option>Other</option>
+              <option>Savings</option>
+              <option>Fun</option>
             </select>
             <br />
             <h3>Amount</h3>
@@ -29,9 +29,15 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
               </div>
-              <input id="transAmount" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="e.g. 50">
+              <input name="transAmount" id="transAmount" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="e.g. 50">
+            </div>
+            <br />
+            <h3>Description</h3>
+            <div class="input-group mb-3">
+              <input name="transDesc" id="transDesc" type="text" class="form-control" aria-label="Description" placeholder="e.g. Walmart - Groceries">
             </div>
             <button type="submit" class="btn btn-success">Add Transaction</button>
+            </center>
           </form>
         </div>
       </div>

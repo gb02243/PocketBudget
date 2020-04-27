@@ -43,6 +43,19 @@ app.use('/', router);
 var billAmt, foodAmt, gasAmt, savingsAmt, funAmt, totalBudget, remainingFunds;
 var currentUser = { user_id: null, fullname: null, email: null, city: null, state: null, zip: null };
 
+//post for submit transaction
+app.post('/submitTransaction', (req, res) => {
+  transCategory = req.body.transCategory;
+  transAmount = req.body.transAmount;
+  transDesc = req.body.transDesc;
+
+  var query = `INSERT INTO transaction (user_id, category, amount, description) VALUES (${currentUser.user_id}, '${transCategory}', ${transAmount}, '${transDesc}')`;
+  conn.query(query, function(err, result) {
+    if (err) console.log(err);
+    res.redirect('dashboard');
+  });
+});
+
 //post for submit budget
 app.post('/submitBudget', (req, res) => {
   inputBillsAmt = req.body.inputBillsAmount;
@@ -83,6 +96,7 @@ app.get('/create_budget',(req, res) => {
 
 //route for dashboard
 app.get('/dashboard',(req, res) => {
+  var totalSpending = 0, spendingBillAmt = 0, spendingFoodAmt = 0, spendingGasAmt = 0, spendingSavingsAmt = 0, spendingFunAmt = 0;
   var query = `SELECT * FROM budget WHERE user_id = '${currentUser.user_id}'`;
   conn.query(query, function(err, result) {
     if(err) console.log(err);
@@ -93,7 +107,37 @@ app.get('/dashboard',(req, res) => {
       savingsAmt = result[0].savings_percent;
       funAmt = result[0].fun_percent;
       var amount_total = result[0].amount_total;
+    }
+    var query2 = `SELECT * FROM transaction WHERE user_id = '${currentUser.user_id}'`;
+    conn.query(query2, function(err, result) {
+      if(err) console.log(err);
+      if(result.length > 0){
+        for(counter = 0; counter < result.length; counter++){
+          if(result[counter].category == "Bills"){
+            spendingBillAmt += result[counter].amount;
+            totalSpending += result[counter].amount;
+          }else if (result[counter].category == "Food") {
+            spendingFoodAmt += result[counter].amount;
+            totalSpending += result[counter].amount;
+          }else if (result[counter].category == "Gas") {
+            spendingGasAmt += result[counter].amount;
+            totalSpending += result[counter].amount;
+          }else if (result[counter].category == "Savings") {
+            spendingSavingsAmt += result[counter].amount;
+            totalSpending += result[counter].amount;
+          }else if (result[counter].category == "Fun") {
+            spendingFunAmt += result[counter].amount;
+            totalSpending += result[counter].amount;
+          }
+        }
+      }
       res.render('dashboard', {
+        totalSpending:totalSpending,
+        spendingBillAmt:spendingBillAmt,
+        spendingFoodAmt:spendingFoodAmt,
+        spendingGasAmt:spendingGasAmt,
+        spendingSavingsAmt:spendingSavingsAmt,
+        spendingFunAmt:spendingFunAmt,
         billAmt:billAmt,
         foodAmt:foodAmt,
         gasAmt:gasAmt,
@@ -107,7 +151,7 @@ app.get('/dashboard',(req, res) => {
         state: currentUser.state,
         zip: currentUser.zip
       });
-    }
+    });
   });
 });
 
@@ -118,8 +162,13 @@ app.get('/enter_transaction', (req, res) => {
 
 //route for transactions
 app.get('/view_transactions',(req, res) => {
-
-  res.render('transaction');
+  var query = `SELECT * FROM transaction WHERE user_id = '${currentUser.user_id}'`;
+  conn.query(query, (err, result) => {
+    if (err) throw err;
+    res.render("transaction", {
+      result:result
+    });
+  });
 });
 
 app.post('/signup', (req, res) => {
@@ -169,6 +218,10 @@ app.post('/login', (req, res) => {
     });
   }else res.send('Please enter an email and password!');
 });
+
+function trailZero(x){
+  return Number.parseFloat(x).toFixed(2);
+}
 
 //server listening
 app.listen(8000, () => {
