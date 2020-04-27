@@ -41,6 +41,7 @@ app.use('/assets',express.static(__dirname + '/public'));
 app.use('/', router);
 
 var billAmt, foodAmt, gasAmt, savingsAmt, funAmt, totalBudget, remainingFunds;
+var currentUser = { user_id: null, fullname: null, email: null, city: null, state: null, zip: null };
 
 //post for submit budget
 app.post('/submitBudget', (req, res) => {
@@ -58,7 +59,11 @@ app.post('/submitBudget', (req, res) => {
   savingsAmt = (inputSavingsAmt*0.01)*inputBudgetAmt;
   funAmt = (inputFunAmt*0.01)*inputBudgetAmt;
 
-  res.redirect('dashboard');
+  var query = `INSERT INTO budget (user_id, amount_total, bills_percent, food_percent, gas_percent, savings_percent, fun_percent) VALUES (${currentUser.user_id}, ${totalBudget}, ${billAmt}, ${foodAmt}, ${gasAmt}, ${savingsAmt}, ${funAmt})`;
+  conn.query(query, function(err, result) {
+    if (err) console.log(err);
+    res.redirect('dashboard');
+  });
 });
 
 //route for homepage
@@ -84,7 +89,13 @@ app.get('/dashboard',(req, res) => {
     gasAmt:gasAmt,
     savingsAmt:savingsAmt,
     funAmt:funAmt,
-    totalBudget:totalBudget
+    totalBudget:totalBudget,
+    user_id: currentUser.user_id,
+    fullname: currentUser.fullname,
+    email: currentUser.email,
+    city: currentUser.city,
+    state: currentUser.state,
+    zip: currentUser.zip
   });
 });
 
@@ -93,7 +104,7 @@ app.get('/enter_transaction', (req, res) => {
   res.render('enter_transaction');
 });
 
-  //route for transactions
+//route for transactions
 app.get('/transaction',(req, res) => {
 
   res.render('transaction');
@@ -111,7 +122,19 @@ app.post('/signup', (req, res) => {
   var query = `INSERT INTO users (fullname, email, password, city, state, zip) VALUES ('${user.fullname}', '${user.email}', '${user.password}', '${user.city}', '${user.state}', ${user.zip})`;
   conn.query(query, function(err, result) {
     if (err) console.log(err);
-    res.redirect('create_budget');
+    var query2 = `SELECT * FROM users WHERE email = '${user.email}' AND password = '${user.password}'`;
+    conn.query(query2, function(err, result) {
+      if(err) console.log(err);
+      if(result.length > 0){
+        currentUser.user_id = result[0].user_id;
+        currentUser.fullname = result[0].fullname;
+        currentUser.email = result[0].email;
+        currentUser.city = result[0].city;
+        currentUser.state = result[0].state;
+        currentUser.zip = result[0].zip;
+        res.redirect('create_budget');
+      }
+    });
   });
 });
 
@@ -121,7 +144,15 @@ app.post('/login', (req, res) => {
     var query = `SELECT * FROM users WHERE email = '${login.email}' AND password = '${login.password}'`;
     conn.query(query, function(err, result) {
       if(err) console.log(err);
-      if(result.length > 0) res.redirect('dashboard');
+      if(result.length > 0){
+        currentUser.user_id = result[0].user_id;
+        currentUser.fullname = result[0].fullname;
+        currentUser.email = result[0].email;
+        currentUser.city = result[0].city;
+        currentUser.state = result[0].state;
+        currentUser.zip = result[0].zip;
+        res.redirect('dashboard');
+      }
       else res.send('Invalid email and password!');
     });
   }else res.send('Please enter an email and password!');
