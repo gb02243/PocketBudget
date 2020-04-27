@@ -46,7 +46,7 @@ insert into `users` (fullname, email, password, city, state, zip) values
 ('Toby Burkey', 'tburkey@pocketbudget.com', 'burkey', 'Statesboro', 'GA', 30458);
 
 insert into `budget` (user_id, amount_total, bills_percent, food_percent, gas_percent, savings_percent, fun_percent) values
-(1, 100, 20, 20, 20, 20, 20),
-(2, 100, 20, 20, 20, 20, 20),
-(3, 100, 20, 20, 20, 20, 20),
-(4, 100, 20, 20, 20, 20, 20);
+(1, 1000, 200, 200, 200, 200, 200),
+(2, 1000, 200, 200, 200, 200, 200),
+(3, 1000, 200, 200, 200, 200, 200),
+(4, 1000, 200, 200, 200, 200, 200);
