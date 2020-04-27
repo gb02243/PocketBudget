@@ -32,7 +32,7 @@ CREATE TABLE `transaction` (
   `user_id` int(11) NOT NULL,
   `category` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `amount` varchar(255) NOT NULL,
+  `amount` decimal(50,2) NOT NULL,
   PRIMARY KEY (`transaction_id`)
 );
 
