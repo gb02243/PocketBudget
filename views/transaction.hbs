@@ -22,6 +22,7 @@
           <thead>
             <tr>
               <th scope="col">ID</th>
+              <th scope="col">Category</th>
               <th scope="col">Description</th>
               <th scope="col">Amount</th>
             </tr>
@@ -30,6 +31,7 @@
             {{#each result}}
             <tr>
               <td>{{this.transaction_id}}</td>
+              <td>{{this.category}}</td>
               <td>{{this.description}}</td>
               <td>${{this.amount}}</td>
             </tr>
