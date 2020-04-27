@@ -6,6 +6,10 @@ a {
   color: #28a745;
 }
 
+.fit-minimum {
+  min-height: 100%
+}
+
 .dashboard-bg {
   background-color: white;
   border-radius: 1em;
