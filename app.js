@@ -117,7 +117,7 @@ app.get('/enter_transaction', (req, res) => {
 });
 
 //route for transactions
-app.get('/transaction',(req, res) => {
+app.get('/view_transactions',(req, res) => {
 
   res.render('transaction');
 });
