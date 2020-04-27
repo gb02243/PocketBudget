@@ -47,7 +47,7 @@ insert into `users` (fullname, email, password, city, state, zip) values
 
 insert into `budget` (user_id, amount_total, bills_percent, food_percent, gas_percent, savings_percent, fun_percent) values
   (1, 1000, 200, 200, 200, 200, 200),
-  (2, 1000, 200, 200, 200, 200, 200),
+  (2, 1280, 576, 256, 256, 128, 64),
   (3, 1000, 200, 200, 200, 200, 200),
   (4, 1000, 200, 200, 200, 200, 200);
 
