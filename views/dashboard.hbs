@@ -20,36 +20,20 @@
       <div class="row">
         <div class="col justify-content-center">
           <center>
-            <h2>Current Budget</h2>
-            <p>
-              Senserit aliqua dolor aut aliqua sed export nam litteris. E tempor veniam culpa
-              possumus te fore cernantur vidisse, quae illustriora consequat culpa aliquip, an
-              cupidatat id litteris. Elit incurreret graviterque, qui illum constias, tamen an
-              do quis quamquam est magna se incurreret ita tempor. Minim nescius
-              concursionibus, occaecat arbitrantur iis senserit te ita summis eram malis
-              pariatur, nisi ex hic magna litteris, eram aliquip est comprehenderit, excepteur
-              quem consequat hic consequat reprehenderit et occaecat, ubi magna deserunt.Ad
-              quae se esse, si anim adipisicing, litteris summis hic eiusmod adipisicing,
-              appellat multos senserit mandaremus. Arbitror velit quid non veniam. Id a
-              tractavissent.
-            </p>
+            <h2>Current Budget: ${{amount_total}}</h2>
+            <p>(In $USD)</p>
+            <canvas id="currentBudgetChart"></canvas>
+            <p>Bills: $<span id="billsAmount">{{billAmt}}</span></p>
+            <p>Food: $<span id="foodAmount">{{foodAmt}}</span></p>
+            <p>Gas: $<span id="gasAmount">{{gasAmt}}</span></p>
+            <p>Savings: $<span id="savingsAmount">{{savingsAmt}}</span></p>
+            <p>Fun: $<span id="funAmount">{{funAmt}}</span></p>
           </center>
         </div>
         <div class="col justify-content-center">
           <center>
             <h2>Current Spending</h2>
-            <p>
-              Senserit aliqua dolor aut aliqua sed export nam litteris. E tempor veniam culpa
-              possumus te fore cernantur vidisse, quae illustriora consequat culpa aliquip, an
-              cupidatat id litteris. Elit incurreret graviterque, qui illum constias, tamen an
-              do quis quamquam est magna se incurreret ita tempor. Minim nescius
-              concursionibus, occaecat arbitrantur iis senserit te ita summis eram malis
-              pariatur, nisi ex hic magna litteris, eram aliquip est comprehenderit, excepteur
-              quem consequat hic consequat reprehenderit et occaecat, ubi magna deserunt.Ad
-              quae se esse, si anim adipisicing, litteris summis hic eiusmod adipisicing,
-              appellat multos senserit mandaremus. Arbitror velit quid non veniam. Id a
-              tractavissent.
-            </p>
+
           </center>
         </div>
       </div>
@@ -70,8 +54,48 @@
   <!-- FOOTER -->
   {{>footer}}
   <!-- END FOOTER -->
+  <section class="hidden">
+
+  </section>
   <script type="text/javascript">
   jarallax(document.querySelectorAll('.jarallax'));
+  </script>
+  <script>
+  var billAmt = document.getElementById('billsAmount').textContent;
+  var foodAmt= document.getElementById('foodAmount').textContent;
+  var gasAmt = document.getElementById('gasAmount').textContent;
+  var savingsAmt = document.getElementById('savingsAmount').textContent;
+  var funAmt = document.getElementById('funAmount').textContent;
+
+  var ctx = document.getElementById('currentBudgetChart').getContext('2d');
+
+  var currentBudgetChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ['Bills', 'Food', 'Gas', 'Savings', 'Fun'],
+          datasets: [{
+              label: '# of Dollars',
+              data: [billAmt, foodAmt, gasAmt, savingsAmt, funAmt],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.8)',
+                  'rgba(54, 162, 235, 0.8)',
+                  'rgba(255, 206, 86, 0.8)',
+                  'rgba(75, 192, 192, 0.8)',
+                  'rgba(153, 102, 255, 0.8)',
+                  'rgba(255, 159, 64, 0.8)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      }
+  });
   </script>
 </body>
 </html>

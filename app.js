@@ -83,19 +83,31 @@ app.get('/create_budget',(req, res) => {
 
 //route for dashboard
 app.get('/dashboard',(req, res) => {
-  res.render('dashboard', {
-    billAmt:billAmt,
-    foodAmt:foodAmt,
-    gasAmt:gasAmt,
-    savingsAmt:savingsAmt,
-    funAmt:funAmt,
-    totalBudget:totalBudget,
-    user_id: currentUser.user_id,
-    fullname: currentUser.fullname,
-    email: currentUser.email,
-    city: currentUser.city,
-    state: currentUser.state,
-    zip: currentUser.zip
+  var query = `SELECT * FROM budget WHERE user_id = '${currentUser.user_id}'`;
+  conn.query(query, function(err, result) {
+    if(err) console.log(err);
+    if(result.length > 0){
+      billAmt = result[0].bills_percent;
+      foodAmt = result[0].food_percent;
+      gasAmt = result[0].gas_percent;
+      savingsAmt = result[0].savings_percent;
+      funAmt = result[0].fun_percent;
+      var amount_total = result[0].amount_total;
+      res.render('dashboard', {
+        billAmt:billAmt,
+        foodAmt:foodAmt,
+        gasAmt:gasAmt,
+        savingsAmt:savingsAmt,
+        funAmt:funAmt,
+        amount_total:amount_total,
+        user_id: currentUser.user_id,
+        fullname: currentUser.fullname,
+        email: currentUser.email,
+        city: currentUser.city,
+        state: currentUser.state,
+        zip: currentUser.zip
+      });
+    }
   });
 });
 
