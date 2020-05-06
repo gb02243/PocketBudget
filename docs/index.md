@@ -17,7 +17,7 @@ Our data tier consists of a MySQL database. To keep things simple we used a very
 
 ### Application Usage
 #### Homepage
-![homepage](https://imgur.com/a/xppCTre)
+![homepage](https://i.imgur.com/Iwnxun3.jpg)
 ##### Login Modal
 ##### Sign Up Modal
 #### Onboarding
