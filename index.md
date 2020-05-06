@@ -17,6 +17,7 @@ Our data tier consists of a MySQL database. To keep things simple we used a very
 
 ### Application Usage
 #### Homepage
+
 ##### Login Modal
 ##### Sign Up Modal
 #### Onboarding
