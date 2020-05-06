@@ -15,3 +15,4 @@ Our logic tier is written in Node.js and ExpressJS. This layer acts as a bridge 
 #### Data Tier
 Our data tier consists of a MySQL database. To keep things simple we used a very small database structure consisting of three tables: Users, Budgets, and Transactions. The user table has columns for a user id, the user's name, email, password, city, state, and zip code. The budget table has columns for a budget id, user id, total budget, amount allocated for bills, food, gas, savings, and fun so the user can create their budget and the server can store the information for display. The transaction table stores all of the information about the purchases that the user enters so it can be compared to their budget and displayed in an easy-to-understand way. It consists of columns for a transaction id, user id, transaction category, transaction description, and transaction amount.
 
+### Application Usage
