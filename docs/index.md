@@ -26,12 +26,12 @@ Our data tier consists of a MySQL database. To keep things simple we used a very
 ##### Enter Budget
 ![enterbudget](https://i.imgur.com/N9DzFXk.png)
 ##### Budget Breakdown
-![breakdown](https://imgur.com/bQIejHB.jpg)
+![breakdown](https://i.imgur.com/PWFAwMH.png)
 ##### Confirmation
-![confirm](https://imgur.com/7ReoWxe.jpg)
+![confirm](https://i.imgur.com/SUf28jt.png)
 #### Dashboard
-![dashboard](https://imgur.com/4n086VO.jpg)
+![dashboard](https://i.imgur.com/ZrQzEjZ.png)
 ##### Enter Transaction
-![entertrans](https://imgur.com/i7D53wP.jpg)
+![entertrans](https://i.imgur.com/BkL2wnk.png)
 ##### View Transaction
-![viewtrans](https://imgur.com/TcyEwD4.jpg)
+![viewtrans](https://i.imgur.com/tmeZYr5.png)
