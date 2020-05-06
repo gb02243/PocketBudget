@@ -24,30 +24,39 @@ Our data tier consists of a MySQL database. To keep things simple we used a very
 ---
 ![homepage](https://i.imgur.com/Iwnxun3.jpg)
 > From the homepage the user will have the option to Log In or Sign Up
+
 ##### Login Modal
 ![login](https://i.imgur.com/UnEoAQw.jpg)
 > Each field in the login modal is verified with color coded emphasis so the user will know if they forgot to fill out a field. Once all of the fields are filled in, they will turn green and the user may log in.
+
 ##### Sign Up Modal
 ![signup](https://i.imgur.com/ZoYZxTJ.png)
 > The sign up modal has the same verification features as the Log In modal. Once all of the fields are filled in they will turn green and the user will be redirected to the onboarding page.
+
 #### Onboarding
 ---
 ##### Enter Budget
 ![enterbudget](https://i.imgur.com/N9DzFXk.png)
 > On this page the user will be prompted to enter a budget amount per month. Once the field is filled in, it will turn green and the user will be able to move on to the next page.
+
 ##### Budget Breakdown
 ![breakdown](https://i.imgur.com/PWFAwMH.png)
 > On this page the user will break down their budget into percentages for each category. As they enter the percentages the graph on the right will update to give them a visual representation of their budget breakdown.
+
 ##### Confirmation
 ![confirm](https://i.imgur.com/SUf28jt.png)
 > On this page the user will be prompted to confirm their budget that they created in the previous two pages. They will see a dollar-by-dollar breakdown of each category. Once they are satisfied with their breakdown they can press submit and they will be redirected to their dashboard.
+
 #### Dashboard
 ---
 ![dashboard](https://i.imgur.com/ZrQzEjZ.png)
 > On the dashboard the user will have a couple of options. They can see a graph of their current budget breakdown that they created as well as a graph of their current reported spending. The spending will be color coded so the user can easily tell if they are over budget and if so what they are over budget on. Below the graphs the user has the option to Enter a Transaction and View Transactions, pressing either of these buttons will redirect them to their respective pages.
+
 ##### Enter Transaction
 ![entertrans](https://i.imgur.com/BkL2wnk.png)
 > On this page the user will be able to enter a transaction. The transactions will be categorized, then they will enter the amount, and then they will enter the description of the item.
+
 ##### View Transaction
 ![viewtrans](https://i.imgur.com/tmeZYr5.png)
 > On this page the user will be able to see all of their current transactions that they have entered.
+
