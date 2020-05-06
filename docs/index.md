@@ -24,7 +24,7 @@ Our data tier consists of a MySQL database. To keep things simple we used a very
 ![signup](https://imgur.com/fBwbXTM.jpg)
 #### Onboarding
 ##### Enter Budget
-![enterbudget](https://imgur.com/o9rCDua.jpg)
+![enterbudget](https://imgur.com/6LO1L7K.jpg)
 ##### Budget Breakdown
 ![breakdown](https://imgur.com/bQIejHB.jpg)
 ##### Confirmation
