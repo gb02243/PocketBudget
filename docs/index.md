@@ -19,19 +19,19 @@ Our data tier consists of a MySQL database. To keep things simple we used a very
 #### Homepage
 ![homepage](https://i.imgur.com/Iwnxun3.jpg)
 ##### Login Modal
-![login](https://imgur.com/a/JCLafT5.jpg)
+![login](https://imgur.com/JCLafT5.jpg)
 ##### Sign Up Modal
-![signup](https://imgur.com/a/fBwbXTM.jpg)
+![signup](https://imgur.com/fBwbXTM.jpg)
 #### Onboarding
 ##### Enter Budget
-![enterbudget](https://imgur.com/a/o9rCDua.jpg)
+![enterbudget](https://imgur.com/o9rCDua.jpg)
 ##### Budget Breakdown
-![breakdown](https://imgur.com/a/bQIejHB.jpg)
+![breakdown](https://imgur.com/bQIejHB.jpg)
 ##### Confirmation
-![confirm](https://imgur.com/a/7ReoWxe.jpg)
+![confirm](https://imgur.com/7ReoWxe.jpg)
 #### Dashboard
-![dashboard](https://imgur.com/a/4n086VO.jpg)
+![dashboard](https://imgur.com/4n086VO.jpg)
 ##### Enter Transaction
-![entertrans](https://imgur.com/a/i7D53wP.jpg)
+![entertrans](https://imgur.com/i7D53wP.jpg)
 ##### View Transaction
-![viewtrans](https://imgur.com/a/TcyEwD4.jpg)
+![viewtrans](https://imgur.com/TcyEwD4.jpg)
